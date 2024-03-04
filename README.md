@@ -56,6 +56,9 @@ After downloading, place these files in the specified directories within the Car
 - `raw_transformer_data.csv` → `data/raw_transformer_datasets`
 - `train_hERG.h5` → `data/prepared_cardiac_datasets/`
 
+# Running the Software
+Running the complete CardioGenAI framework, performing inference with the discriminative models, and reproducing the figures in the manuscript can easily be achieved with the [Jupyter notebook]() provided with this repository. Instructions are below.
+
 ## Running the CardioGenAI Framework
 To optimize a cardiotoxic compound with CardioGenAI, utilize the `optimize_cardiotoxic_drug` function from the `Optimization_Framework` module:
 
