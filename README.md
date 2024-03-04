@@ -51,7 +51,7 @@ After downloading, place these files in the specified directories within the Car
 ## Running the CardioGenAI Framework
 To optimize a cardiotoxic compound with CardioGenAI, utilize the `optimize_cardiotoxic_drug` function from the `Optimization_Framework` module:
 
-`from src.Optimization_Framework import optimize_cardiotoxic_drug`
+```from src.Optimization_Framework import optimize_cardiotoxic_drug```
 
 `optimize_cardiotoxic_drug(input_smiles,
                           herg_activity,
