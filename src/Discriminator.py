@@ -790,7 +790,7 @@ def predict_cardiac_ion_channel_activity(
     predict_Cav=False,
     device="gpu",
     bidirectional_transformer_params="model_parameters/transformer_model_parameters/Bidirectional_Transformer_parameters.pt",
-    transformer_training_data="data/prepared_transformer_datasets/prepared_transformer_data.csv",
+    transformer_training_data="data/prepared_transformer_data.csv",
     herg_regression_params="model_parameters/discriminative_model_parameters/hERG_Regression_parameters.pt",
     nav_regression_params="model_parameters/discriminative_model_parameters/Nav_Regression_parameters.pt",
     cav_regression_params="model_parameters/discriminative_model_parameters/Cav_Regression_parameters.pt",
@@ -1145,7 +1145,7 @@ def screen_FDA_compounds(
     nav_classification_params="model_parameters/discriminative_model_parameters/Nav_Classification_parameters.pt",
     cav_classification_params="model_parameters/discriminative_model_parameters/Cav_Classification_parameters.pt",
     bidirectional_transformer_params="model_parameters/transformer_model_parameters/Bidirectional_Transformer_parameters.pt",
-    transformer_training_data="data/prepared_transformer_datasets/prepared_transformer_data.csv",
+    transformer_training_data="data/prepared_transformer_data.csv",
     save_path="results/discriminative_results/FDA_compound_predictions.json",
     save=True,
 ):
