@@ -1,0 +1,1 @@
+{"hERG": {"smiles": ["O=c1[nH]c2ccccc2n1C1CCN(CCCC(c2ccc(F)cc2)c2ccc(F)cc2)CC1"], "predictions": [7.629417896270752]}, "NaV1.5": {"smiles": ["O=c1[nH]c2ccccc2n1C1CCN(CCCC(c2ccc(F)cc2)c2ccc(F)cc2)CC1"], "predictions": [5.816833972930908]}, "CaV1.2": {"smiles": ["O=c1[nH]c2ccccc2n1C1CCN(CCCC(c2ccc(F)cc2)c2ccc(F)cc2)CC1"], "predictions": [6.668112277984619]}}
