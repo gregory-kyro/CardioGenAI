@@ -25,8 +25,8 @@ cd CardioGenAI
 ### Downloading Necessary Files
 Some essential files are not hosted directly in the GitHub repository due to their size. Please download the following files from the provided Google Drive links:
 
-- Autoregressive_Transformer_parameters.pt <https://drive.google.com/file/d/1oj2OkjRNX3rYN9xv0GKkANjWKf1ebLLN/view?usp=sharing>
-- prepared_transformer_data.csv
-- raw_transformer_data.csv
-- train_hERG.h5
+- [Autoregressive_Transformer_parameters.pt](https://drive.google.com/file/d/1oj2OkjRNX3rYN9xv0GKkANjWKf1ebLLN/view?usp=sharing)
+- [prepared_transformer_data.csv](https://drive.google.com/file/d/1l2Osk7zFj4rTyrjAi7EJ1GMrsYMbcRHI/view?usp=drive_link)
+- [raw_transformer_data.csv](https://drive.google.com/file/d/1pVOFnNT2sfLRaLoHnF-qDCs6G_worX0e/view?usp=drive_link)
+- [train_hERG.h5](https://drive.google.com/file/d/1xfNwpVIhqWyFW_3z3sUyuy-45i248J-0/view?usp=drive_link)
 
