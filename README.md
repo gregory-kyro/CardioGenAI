@@ -17,9 +17,11 @@ Follow these instructions to install and set up CardioGenAI on your local machin
 
 ### Cloning the Repository
 Clone the CardioGenAI repository to your local environment using the following command:
+
 `git clone https://github.com/gregory-kyro/CardioGenAI.git`
 
 After cloning, navigate to the CardioGenAI project directory:
+
 `cd CardioGenAI`
 
 ### Downloading Necessary Files
