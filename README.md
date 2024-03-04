@@ -25,7 +25,7 @@ After cloning, navigate to the CardioGenAI project directory:
 `cd CardioGenAI`
 
 ### Downloading Necessary Files
-Some essential files are not hosted directly in the GitHub repository due to their sizes. Please download the following files from the provided Google Drive links:
+Some essential files are not hosted directly in the GitHub repository due to their sizes. Please download the following files from the provided links:
 
 - [Autoregressive_Transformer_parameters.pt](https://drive.google.com/file/d/1oj2OkjRNX3rYN9xv0GKkANjWKf1ebLLN/view?usp=sharing)
 - [prepared_transformer_data.csv](https://drive.google.com/file/d/1l2Osk7zFj4rTyrjAi7EJ1GMrsYMbcRHI/view?usp=drive_link)
