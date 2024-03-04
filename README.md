@@ -18,20 +18,28 @@ Follow these instructions to install and set up CardioGenAI on your local machin
 ### Cloning the Repository
 Clone the CardioGenAI repository to your local environment using the following command:
 
-`git clone https://github.com/gregory-kyro/CardioGenAI.git`
+```
+git clone https://github.com/gregory-kyro/CardioGenAI.git
+```
 
 After cloning, navigate to the CardioGenAI project directory:
 
-`cd CardioGenAI`
+```
+cd CardioGenAI
+```
 
 ### Setting Up the Conda Environment
 Create a Conda environment using the `environment.yml` file provided in the repository which contains all of the necessary dependencies:
 
-`conda env create -f environment.yml`
+```
+conda env create -f environment.yml
+```
 
 Activate the newly created environment:
 
-`conda activate cardiogenai_env`
+```
+conda activate cardiogenai_env
+```
 
 ### Downloading Necessary Files
 Some essential files are not hosted directly in the GitHub repository due to their sizes. Please download the following files from the provided Google Drive links:
@@ -74,14 +82,16 @@ optimize_cardiotoxic_drug(input_smiles,
 
 To predict activity against the hERG, NaV1.5 and CaV1.2 channels, utilize the `predict_cardiac_ion_channel_activity` function from the `Discriminator` module:
 
-`from src.Discriminator import predict_cardiac_ion_channel_activity`
+```
+from src.Discriminator import predict_cardiac_ion_channel_activity
 
-`predict_cardiac_ion_channel_activity(input_data,
+predict_cardiac_ion_channel_activity(input_data,
                                      prediction_type,
                                      predict_hERG,
                                      predict_Nav,
                                      predict_Cav,
-                                     device)`
+                                     device)
+```
 
 - `input_data (str or list)`: The input data for which the discriminative models will process. If the entry is a string, it must be either a SMILES string or a path to a prepared h5 file. If it is a list, it must be a list of SMILES strings.
 - `prediction_type (str)`: Either 'regression' or 'classification'. Default is 'regression'.
@@ -95,6 +105,8 @@ To predict activity against the hERG, NaV1.5 and CaV1.2 channels, utilize the `p
 
 To reproduce the results presented in the manuscript, utilize the `get_figures` function from the `Figures` module:
 
-`from src.Figures import get_figures`
+```
+from src.Figures import get_figures
 
-`get_figures()`
+get_figures()
+```
