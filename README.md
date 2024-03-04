@@ -13,29 +13,24 @@ Drug-induced cardiotoxicity is a major health concern which can lead to serious 
 The CardioGenAI framework combines generative and discriminative ML models to re-engineer cardiotoxic compounds for reduced cardiac ion channel activity while preserving their pharmacological action. An autoregressive transformer is trained on a dataset that we previously curated which contains approximately 5 million unique and valid SMILES strings derived from ChEMBL 33, GuacaMol v1, MOSES, and BindingDB datasets. The model is trained autoregressively, receiving a sequence of SMILES tokens as context as well as the corresponding molecular scaffold and ADMET properties, and iteratively predicting each subsequent token in the sequence. Once trained, this model is able to generate valid molecules conditioned on a specified molecular scaffold along with a set of ADMET properties. For an input cardiotoxic compound, the generation is conditioned on the scaffold and ADMET properties of this compound. Each generated compound is subject to filtering based on activity against hERG, NaV1.5 and CaV1.2 channels. Depending on the desired activity against each channel, the framework employs either classification models to include predicted non-blockers or regression models to include compounds within a specified range of predicted pIC50 values. Both the classification and regression models utilize the same architecture, and are trained using three feature representations of each molecule: a feature vector that is extracted from a bidirectional transformer trained on SMILES strings, a molecular fingerprint, and a graph. For each molecule in the filtered generated ensemble and the input cardiotoxic molecule, a feature vector is constructed from the 209 chemical descriptors available through the RDKit Descriptors module. The redundant descriptors are then removed according to pairwise mutual information calculated for every possible pair of descriptors. Cosine similarity is then calculated between the processed descriptor vector of the input molecule and the descriptor vectors of every generated molecule to identify the molecules most chemically similar to the input molecule, but with desired activity against each of the cardiac ion channels.
 
 ## Installation and Setup
-
 Follow these instructions to install and set up CardioGenAI on your local machine:
 
 ### Cloning the Repository
-
 Clone the CardioGenAI repository to your local environment using the following command:
 
 `git clone https://github.com/gregory-kyro/CardioGenAI.git`
-
 
 After cloning, navigate to the CardioGenAI project directory:
 
 `cd CardioGenAI`
 
 ### Downloading Necessary Files
-
 Some essential files are not hosted directly in the GitHub repository due to their sizes. Please download the following files from the provided Google Drive links:
 
 - [Autoregressive_Transformer_parameters.pt](https://drive.google.com/file/d/1oj2OkjRNX3rYN9xv0GKkANjWKf1ebLLN/view?usp=sharing)
 - [prepared_transformer_data.csv](https://drive.google.com/file/d/1l2Osk7zFj4rTyrjAi7EJ1GMrsYMbcRHI/view?usp=drive_link)
 - [raw_transformer_data.csv](https://drive.google.com/file/d/1pVOFnNT2sfLRaLoHnF-qDCs6G_worX0e/view?usp=drive_link)
 - [train_hERG.h5](https://drive.google.com/file/d/1xfNwpVIhqWyFW_3z3sUyuy-45i248J-0/view?usp=drive_link)
-
 
 After downloading, place these files in the specified directories within the CardioGenAI project:
 
@@ -45,3 +40,20 @@ After downloading, place these files in the specified directories within the Car
 - `train_hERG.h5` → `data/prepared_cardiac_datasets/`
 
 ## Running the CardioGenAI Framework
+To optimize a cardiotoxic compound with CardioGenAI, utilize the `optimize_cardiotoxic_drug` function from the `Optimization_Framework` module:
+
+`from src.Optimization_Framework import optimize_cardiotoxic_drug`
+
+`optimize_cardiotoxic_drug(input_smiles,
+                          herg_activity,
+                          nav_activity,
+                          cav_activity,
+                          n_generations,
+                          device)`
+
+- `input_smiles (str)`: The input SMILES string of the compound that you seek to optimize for reduced cardiotoxicity.
+- `herg_activity (tuple or str)`: hERG activity for which to filter. If the entry is a string, it must be either 'blockers' or non-blockers'. If it is a tuple, it should indicate a range of activity values.
+- `nav_activity (tuple or str)`: NaV1.5 activity for which to filter. If the entry is a string, it must be either 'blockers' or non-blockers'. If it is a tuple, it should indicate a range of activity values.
+- `cav_activity (tuple or str)`: CaV1.2 activity for which to filter. If the entry is a string, it must be either 'blockers' or non-blockers'. If it is a tuple, it should indicate a range of activity values.
+- `n_generations (int)`: The number of optimized drug candidates to generate. Default is 100.
+- `device (str)`: The device to use for the optimization. Must be either 'gpu' or 'cpu'. Default is 'gpu'.
