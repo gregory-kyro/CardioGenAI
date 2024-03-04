@@ -30,3 +30,8 @@ Some essential files are not hosted directly in the GitHub repository due to the
 - [raw_transformer_data.csv](https://drive.google.com/file/d/1pVOFnNT2sfLRaLoHnF-qDCs6G_worX0e/view?usp=drive_link)
 - [train_hERG.h5](https://drive.google.com/file/d/1xfNwpVIhqWyFW_3z3sUyuy-45i248J-0/view?usp=drive_link)
 
+After downloading, place these files in the specified directories within the CardioGenAI project:
+- `Autoregressive_Transformer_parameters.pt` → `model_parameters/transformer_model_parameters`
+- `prepared_transformer_data.csv` → `data/prepared_transformer_datasets`
+- `raw_transformer_data.csv` → `data/raw_transformer_datasets`
+- `train_hERG.h5` → `data/prepared_cardiac_datasets/`
