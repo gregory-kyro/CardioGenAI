@@ -51,14 +51,16 @@ After downloading, place these files in the specified directories within the Car
 ## Running the CardioGenAI Framework
 To optimize a cardiotoxic compound with CardioGenAI, utilize the `optimize_cardiotoxic_drug` function from the `Optimization_Framework` module:
 
-```from src.Optimization_Framework import optimize_cardiotoxic_drug```
+```
+from src.Optimization_Framework import optimize_cardiotoxic_drug
 
-`optimize_cardiotoxic_drug(input_smiles,
+optimize_cardiotoxic_drug(input_smiles,
                           herg_activity,
                           nav_activity,
                           cav_activity,
                           n_generations,
-                          device)`
+                          device)
+```
 
 - `input_smiles (str)`: The input SMILES string of the compound that you seek to optimize for reduced cardiotoxicity.
 - `herg_activity (tuple or str)`: hERG activity for which to filter. If the entry is a string, it must be either 'blockers' or non-blockers'. If it is a tuple, it must indicate a range of activity values.
