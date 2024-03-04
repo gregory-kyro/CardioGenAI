@@ -52,8 +52,29 @@ To optimize a cardiotoxic compound with CardioGenAI, utilize the `optimize_cardi
                           device)`
 
 - `input_smiles (str)`: The input SMILES string of the compound that you seek to optimize for reduced cardiotoxicity.
-- `herg_activity (tuple or str)`: hERG activity for which to filter. If the entry is a string, it must be either 'blockers' or non-blockers'. If it is a tuple, it should indicate a range of activity values.
-- `nav_activity (tuple or str)`: NaV1.5 activity for which to filter. If the entry is a string, it must be either 'blockers' or non-blockers'. If it is a tuple, it should indicate a range of activity values.
-- `cav_activity (tuple or str)`: CaV1.2 activity for which to filter. If the entry is a string, it must be either 'blockers' or non-blockers'. If it is a tuple, it should indicate a range of activity values.
+- `herg_activity (tuple or str)`: hERG activity for which to filter. If the entry is a string, it must be either 'blockers' or non-blockers'. If it is a tuple, it must indicate a range of activity values.
+- `nav_activity (tuple or str)`: NaV1.5 activity for which to filter. If the entry is a string, it must be either 'blockers' or non-blockers'. If it is a tuple, it must indicate a range of activity values.
+- `cav_activity (tuple or str)`: CaV1.2 activity for which to filter. If the entry is a string, it must be either 'blockers' or non-blockers'. If it is a tuple, it must indicate a range of activity values.
 - `n_generations (int)`: The number of optimized drug candidates to generate. Default is 100.
 - `device (str)`: The device to use for the optimization. Must be either 'gpu' or 'cpu'. Default is 'gpu'.
+
+
+## Performing Inference with the Discriminative Models
+
+To predict activity against the hERG, NaV1.5 and CaV1.2 channels, utilize the `predict_cardiac_ion_channel_activity` function from the `Discriminator` module:
+
+`from src.Discriminator import predict_cardiac_ion_channel_activity`
+
+`predict_cardiac_ion_channel_activity(input_data,
+                                     prediction_type,
+                                     predict_hERG,
+                                     predict_Nav,
+                                     predict_Cav,
+                                     device)`
+
+- `input_data (str or list)`: The input data for which the discriminative models will process. If the entry is a string, it must be either a SMILES string or a path to a prepared h5 file. If it is a list, it must be a list of SMILES strings.
+- `prediction_type (str)`: Either 'regression' or 'classification'. Default is 'regression'.
+- `predict_hERG (bool)`: Whether to predict hERG activity. Default is True.
+- `predict_Nav (bool)`: Whether to predict NaV1.5 activity. Default is False.
+- `predict_Cav (bool)`: Whether to predict CaV1.2 activity. Default is False.
+- `device (str)`: The device to use for the inference computations. Must be either 'gpu' or 'cpu'. Default is 'gpu'.
