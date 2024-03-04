@@ -24,6 +24,15 @@ After cloning, navigate to the CardioGenAI project directory:
 
 `cd CardioGenAI`
 
+### Setting Up the Conda Environment
+Create a Conda environment using the `environment.yml` file provided in the repository which contains all of the necessary dependencies:
+
+`conda env create -f environment.yml`
+
+Activate the newly created environment:
+
+`conda activate cardiogenai_env`
+
 ### Downloading Necessary Files
 Some essential files are not hosted directly in the GitHub repository due to their sizes. Please download the following files from the provided Google Drive links:
 
