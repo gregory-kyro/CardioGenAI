@@ -78,3 +78,12 @@ To predict activity against the hERG, NaV1.5 and CaV1.2 channels, utilize the `p
 - `predict_Nav (bool)`: Whether to predict NaV1.5 activity. Default is False.
 - `predict_Cav (bool)`: Whether to predict CaV1.2 activity. Default is False.
 - `device (str)`: The device to use for the inference computations. Must be either 'gpu' or 'cpu'. Default is 'gpu'.
+
+
+## Reproducing the Figures in the Manuscript
+
+To reproduce the results presented in the manuscript, utilize the `get_figures` function from the `Figures` module:
+
+`from src.Figures import get_figures`
+
+`get_figures()`
