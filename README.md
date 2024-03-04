@@ -71,9 +71,9 @@ optimize_cardiotoxic_drug(input_smiles,
 ```
 
 - `input_smiles (str)`: The input SMILES string of the compound that you seek to optimize for reduced cardiotoxicity.
-- `herg_activity (tuple or str)`: hERG activity for which to filter. If the entry is a string, it must be either 'blockers' or non-blockers'. If it is a tuple, it must indicate a range of activity values.
-- `nav_activity (tuple or str)`: NaV1.5 activity for which to filter. If the entry is a string, it must be either 'blockers' or non-blockers'. If it is a tuple, it must indicate a range of activity values.
-- `cav_activity (tuple or str)`: CaV1.2 activity for which to filter. If the entry is a string, it must be either 'blockers' or non-blockers'. If it is a tuple, it must indicate a range of activity values.
+- `herg_activity (tuple or str)`: hERG activity for which to filter. If the entry is a string, it must be either 'blockers' or 'non-blockers'. If it is a tuple, it must indicate a range of activity values.
+- `nav_activity (tuple or str)`: NaV1.5 activity for which to filter. If the entry is a string, it must be either 'blockers' or 'non-blockers'. If it is a tuple, it must indicate a range of activity values.
+- `cav_activity (tuple or str)`: CaV1.2 activity for which to filter. If the entry is a string, it must be either 'blockers' or 'non-blockers'. If it is a tuple, it must indicate a range of activity values.
 - `n_generations (int)`: The number of optimized drug candidates to generate. Default is 100.
 - `device (str)`: The device to use for the optimization. Must be either 'gpu' or 'cpu'. Default is 'gpu'.
 
