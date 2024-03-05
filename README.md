@@ -1,5 +1,5 @@
 <p align="center">
-<src="![cardiogenai_logo_mini](https://github.com/gregory-kyro/CardioGenAI/assets/98780179/2d67c4c4-98d0-46b7-acea-61a05acbe2df)">
+  <img src="https://github.com/gregory-kyro/CardioGenAI/assets/98780179/e04ca9a0-0340-440f-a87c-a417e7136fb1" alt="cardiogenai_logo">
 </p>
 
 [![](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
