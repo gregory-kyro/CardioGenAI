@@ -2,7 +2,7 @@
   <img src="https://github.com/gregory-kyro/CardioGenAI/assets/98780179/8b4451ae-ad90-4d8f-bd0e-d788fd3262a6" alt="cardiogenai_logo">
 </p>
 
-https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/gregory-kyro/CardioGenAI/blob/main/LICENSE)
 
