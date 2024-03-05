@@ -1,4 +1,4 @@
-<p align="center" style="margin: 0; padding: 0;">
+<p align="center">
   <img src="https://github.com/gregory-kyro/CardioGenAI/assets/98780179/8b4451ae-ad90-4d8f-bd0e-d788fd3262a6" alt="cardiogenai_logo">
 </p>
 
