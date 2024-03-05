@@ -3,13 +3,16 @@ import math
 import pandas as pd
 import random
 import re
-from Sophia.sophia import SophiaG
 import torch
 from torch.cuda.amp import GradScaler
 from torch import nn
 from torch.nn import CrossEntropyLoss
 from torch.utils.data import DataLoader, Dataset, random_split
 from tqdm import tqdm
+
+# In order to train the transformers with the SophiaG optimizer, please clone the SophiaG 
+# repository from here: <https://github.com/Liuhong99/Sophia.git> and then import the 
+# SophiaG optimizer: from Sophia.sophia import SophiaG
 
 
 # Define a class for the transformer dataset
