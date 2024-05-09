@@ -188,7 +188,7 @@ class Discriminator_Model(torch.nn.Module):
         nn.init.kaiming_normal_(self.fc4.weight, nonlinearity="relu")
         self.dropout4 = nn.Dropout(dropout)
 
-        # Combied output layers
+        # Combined output layers
         combined_size_gat_fp_tfv = gat_out_dim * n_gat_heads + 200 + 200
         self.combined_linear1_gat_fp_tfv = nn.Linear(combined_size_gat_fp_tfv, 100)
         self.bn_combined_gat_fp_tfv = nn.BatchNorm1d(100)
