@@ -1158,7 +1158,7 @@ def screen_FDA_compounds(
         predict_hERG (bool): Whether to predict hERG activity.
         predict_Nav (bool): Whether to predict Nav activity.
         predict_Cav (bool): Whether to predict Cav activity.
-        rank_by (str): The ion channel to rank the results by. Can be 'hERG', 'Nav', or 'Cav'.
+        rank_by (str): The ion channel to rank the results by. Can be 'hERG', 'NaV1.5', or 'CaV1.2'.
         device (str): The device to use for prediction. Can be 'cpu' or 'gpu'.
         herg_regression_params (str): Path to the hERG regression model parameters file.
         nav_regression_params (str): Path to the Nav regression model parameters file.
@@ -1175,14 +1175,14 @@ def screen_FDA_compounds(
         pandas.DataFrame: DataFrame containing the predicted ion channel activity scores for each compound.
 
     Raises:
-        AssertionError: If `rank_by` is not one of 'hERG', 'Nav', or 'Cav'.
+        AssertionError: If `rank_by` is not one of 'hERG', 'NaV1.5', or 'CaV1.2'.
     """
 
     assert rank_by in [
         "hERG",
-        "Nav",
-        "Cav",
-    ], "rank_by_channel must be one of 'hERG', 'Nav', or 'Cav'."
+        "NaV1.5",
+        "CaV1.2",
+    ], "rank_by_channel must be one of 'hERG', 'NaV1.5', or 'CaV1.2'."
 
     # Retrieve the input SMILES strings
     input_smiles_list = pd.read_csv(input_data)["SMILES"].tolist()
