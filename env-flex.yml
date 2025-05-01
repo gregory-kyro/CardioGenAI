@@ -1,0 +1,26 @@
+﻿name: cardiogenai_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python
+  - ipython
+  - h5py
+  - jupyter
+  - matplotlib
+  - matplotlib-venn
+  - numpy
+  - openbabel
+  - pandas
+  - rdkit
+  - scipy
+  - seaborn
+  - scikit-learn
+  - tqdm
+  - pip
+  - pip:
+      - torch
+      - torchvision
+      - torchaudio
+      - torch-geometric
+      - --extra-index-url https://download.pytorch.org/whl/cu126

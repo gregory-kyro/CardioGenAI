@@ -12,7 +12,10 @@ The link between in vitro hERG ion channel inhibition and subsequent in vivo QT 
 The CardioGenAI framework combines generative and discriminative ML models to re-engineer hERG-active compounds for reduced hERG channel inhibition while preserving their pharmacological activity. An autoregressive transformer is trained on a dataset that we previously curated which contains approximately 5 million unique and valid SMILES strings derived from ChEMBL 33, GuacaMol v1, MOSES, and BindingDB datasets. The model is trained autoregressively, receiving a sequence of SMILES tokens as context as well as the corresponding molecular scaffold and physicochemical properties, and iteratively predicting each subsequent token in the sequence. Once trained, this model is able to generate valid molecules conditioned on a specified molecular scaffold along with a set of physicochemical properties. For an input hERG-active compound, the generation is conditioned on the scaffold and physicochemical properties of this compound. Each generated compound is subject to filtering based on activity against hERG, NaV1.5 and CaV1.2 channels. Depending on the desired activity against each channel, the framework employs either classification models to include predicted non-blockers (i.e., pIC50 value ≥ 5.0) or regression models to include compounds within a specified range of predicted pIC50 values. Both the classification and regression models utilize the same architecture, and are trained using three feature representations of each molecule: a feature vector that is extracted from a bidirectional transformer trained on SMILES strings, a molecular fingerprint, and a graph. For each molecule in the filtered generated ensemble and the input hERG-active molecule, a feature vector is constructed from the 209 chemical descriptors available through the RDKit Descriptors module. The redundant descriptors are then removed according to pairwise mutual information calculated for every possible pair of descriptors. Cosine similarity is then calculated between the processed descriptor vector of the input molecule and the descriptor vectors of every generated molecule to identify the molecules most chemically similar to the input molecule but with desired activity against each of the cardiac ion channels.
 
 ## Installation and Setup
-Follow these instructions to install and set up CardioGenAI on your local Windows machine:
+Follow these instructions to install and set up CardioGenAI on your local machine:
+
+### Installing Miniconda
+Miniconda is a command-line tool for managing python environments, which allows multiple combinations of package versions to exist on the same machine and be used in projects with different requirements. Please follow the [official instructions](https://www.anaconda.com/docs/getting-started/miniconda/install) to install it before continuing.
 
 ### Cloning the Repository
 Clone the CardioGenAI repository to your local environment using the following command:
@@ -28,12 +31,25 @@ cd CardioGenAI
 ```
 
 ### Setting Up the Conda Environment
-Create a Conda environment using the `environment.yml` file provided in the repository which contains all of the necessary dependencies:
+There are two environment files. One has enough information to exactly recreate the environment used during the preparation of the manuscript, but only works on Windows. The second works on Linux as well (untested on MacOS), but will result in slightly different package versions from those used in the Windows-only environment.
 
+Either way, you will create the conda environment using a `.yml` file provided in the repository which contains all of the necessary dependencies:
+
+#### Exact Recreation of Manuscript Environment (Windows Only)
 ```
 conda env create -f environment.yml
 ```
+#### Flexible Install (Linux, Windows, Mac?)
 
+* The env file has an explicit link to CUDA 12.6. If you would like to change this, substitute the last line of `env-flex.yml` with the link listed at the [official pytorch site](https://pytorch.org/).
+
+* At the time of writing, CUDA is not available for Mac. Remove the link at the end of `env-flex.yml`.
+
+```
+conda env create -f env-flex.yml
+```
+
+#### Activation
 Activate the newly created environment:
 
 ```
